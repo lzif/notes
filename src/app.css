@@ -1,0 +1,85 @@
+:root {
+	--primary: #006591;
+	--onPrimary: #ffffff;
+	--primaryContainer: #c9e6ff;
+	--onPrimaryContainer: #001e2f;
+	--secondary: #4f606e;
+	--onSecondary: #ffffff;
+	--secondaryContainer: #d3e5f5;
+	--onSecondaryContainer: #0b1d29;
+	--tertiary: #64597c;
+	--onTertiary: #ffffff;
+	--tertiaryContainer: #eaddff;
+	--onTertiaryContainer: #1f1635;
+	--error: #ba1a1a;
+	--onError: #ffffff;
+	--errorContainer: #ffdad6;
+	--onErrorContainer: #410002;
+	--background: #fcfcff;
+	--onBackground: #191c1e;
+	--surface: #f9f9fc;
+	--onSurface: #191c1e;
+	--surfaceVariant: #dde3ea;
+	--onSurfaceVariant: #41474d;
+	--outline: #71787e;
+	--outlineVariant: #c1c7ce;
+	--shadow: #000000;
+	--scrim: #000000;
+	--inverseSurface: #2e3133;
+	--inverseOnSurface: #f0f0f3;
+	--inversePrimary: #89ceff;
+	--surfaceDim: #d9dadd;
+	--surfaceBright: #f9f9fc;
+	--surfaceContainerLowest: #ffffff;
+	--surfaceContainerLow: #f3f3f6;
+	--surfaceContainer: #edeef0;
+	--surfaceContainerHigh: #e7e8eb;
+	--surfaceContainerHighest: #e2e2e5;
+}
+
+[data-theme='dark'] {
+	--primary: #89ceff;
+	--onPrimary: #00344d;
+	--primaryContainer: #004c6e;
+	--onPrimaryContainer: #c9e6ff;
+	--secondary: #b7c9d9;
+	--onSecondary: #21323f;
+	--secondaryContainer: #384956;
+	--onSecondaryContainer: #d3e5f5;
+	--tertiary: #cec0e8;
+	--onTertiary: #352b4b;
+	--tertiaryContainer: #4c4163;
+	--onTertiaryContainer: #eaddff;
+	--error: #ffb4ab;
+	--onError: #690005;
+	--errorContainer: #93000a;
+	--onErrorContainer: #ffb4ab;
+	--background: #191c1e;
+	--onBackground: #e2e2e5;
+	--surface: #111416;
+	--onSurface: #e2e2e5;
+	--surfaceVariant: #41474d;
+	--onSurfaceVariant: #c1c7ce;
+	--outline: #8b9198;
+	--outlineVariant: #41474d;
+	--shadow: #000000;
+	--scrim: #000000;
+	--inverseSurface: #e2e2e5;
+	--inverseOnSurface: #2e3133;
+	--inversePrimary: #006591;
+	--surfaceDim: #111416;
+	--surfaceBright: #37393c;
+	--surfaceContainerLowest: #0c0e11;
+	--surfaceContainerLow: #191c1e;
+	--surfaceContainer: #1e2022;
+	--surfaceContainerHigh: #282a2c;
+	--surfaceContainerHighest: #333537;
+}
+
+.body {
+	transition:
+		color 0.3s,
+		background-color 0.3s;
+  color:var(--onBackground);
+  background-color: var(--background)
+}

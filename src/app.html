@@ -1,60 +1,75 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="%sveltekit.assets%/reset.css" rel="stylesheet" />
-		<link
-			rel="preload"
-			href="%sveltekit.assets%/fonts/atkinson-regular.woff"
-			as="font"
-			type="font/woff"
-			crossorigin
-		/>
-		<link
-			rel="preload"
-			href="%sveltekit.assets%/fonts/atkinson-bold.woff"
-			as="font"
-			type="font/woff"
-			crossorigin
-		/>
-		<style>
-			@font-face {
-				font-family: 'Atkinson';
-				src: url('/fonts/atkinson-regular.woff') format('woff');
-				font-weight: 400;
-				font-style: normal;
-				font-display: swap;
-			}
-			@font-face {
-				font-family: 'Atkinson';
-				src: url('/fonts/atkinson-bold.woff') format('woff');
-				font-weight: 700;
-				font-style: normal;
-				font-display: swap;
-			}
-			body {
-				font-family: 'Atkinson', sans-serif;
-			}
-		</style>
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<script>
-			(function () {
-				const saved_theme = localStorage.getItem('theme');
-				if (saved_theme) {
-					document.documentElement.setAttribute('data-theme', saved_theme);
-				} else {
-					const prefers_dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-					const theme = prefers_dark ? 'dark' : 'light';
-
-					document.documentElement.setAttribute('data-theme', theme);
-					localStorage.setItem('theme', theme);
-				}
-			})();
-		</script>
-		<div style="display: contents">%sveltekit.body%</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      rel="preload"
+      href="%sveltekit.assets%/fonts/atkinson-regular.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="%sveltekit.assets%/fonts/atkinson-bold.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <style>
+      @font-face {
+        font-family: "Atkinson";
+        src: url("/fonts/atkinson-regular.woff") format("woff");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Atkinson";
+        src: url("/fonts/atkinson-bold.woff") format("woff");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+      body {
+        font-family: "Atkinson", sans-serif;
+      }
+    </style>
+    %sveltekit.head%
+  </head>
+  <body class="bg-surface" data-sveltekit-preload-data="hover">
+    <script>
+      (function () {
+        const saved_theme = localStorage.getItem("theme");
+        if (saved_theme) {
+          document.documentElement.classList.add(saved_theme);
+        } else {
+          const prefers_dark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches;
+          const theme = prefers_dark ? "dark" : "light";
+          document.documentElement.classList.remove("light", "dark");
+          document.documentElement.classList.add(theme);
+          localStorage.setItem("theme", theme);
+        }
+      })();
+    </script>
+    <div style="display: contents">%sveltekit.body%</div>
+    <div
+      class="toast fixed bottom-5 right-5 p-2 bg-surface-container"
+      data-toast-id="change-theme"
+    >
+      Change Theme Color from Saved Color
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+    <script>
+      eruda.init();
+    </script>
+  </body>
 </html>

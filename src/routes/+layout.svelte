@@ -1,14 +1,13 @@
 <script lang="ts">
   import "../app.css";
-  import DarkModeToogle from "$lib/components/DarkModeToogle.svelte"
+  import Nav from "$lib/components/navigation/Nav.svelte";
+  import FAB from "$lib/components/common/FAB.svelte";
+  import { onMount } from "svelte";
+  import { createToast } from "$lib/utils/toast";
+  onMount(() => {});
 </script>
 
-<DarkModeToogle/>
-<slot/>
+<Nav />
+<slot />
 
-<style>
-:global(body) {
-  color: var(--onBackground);
-  background-color: var(--background);
-}
-</style>
+<FAB />
